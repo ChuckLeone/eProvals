@@ -1,6 +1,8 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope, Orders) {
+  $scope.orders = Orders.all();
+})
 
 .controller('OrdersCtrl', function($scope, Orders) {
   $scope.orders = Orders.all();
