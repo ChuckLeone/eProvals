@@ -1,0 +1,69 @@
+/* Empty. Add your own CSS if you like */
+
+.background-dark {
+    background-color: #5f5f5f;
+}
+
+.background-green-dk {
+    background-color: #609500;
+    color: #fff;
+}
+
+.background-blue-dk {
+    background-color: #198bcc;
+    color: #fff;
+}
+
+.tab-nav {
+    background-color: #333;
+    color: #fff;
+}
+
+.tabs-striped .tabs {
+    background-color: #222;
+}
+
+.tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
+    color: #fff;
+    border-color: #8acd0f;
+    background-color: #609500;
+}
+
+.tab-item .icon {
+    color: #fff;
+    font-size: 24px;
+    padding-top: 5px;
+}
+
+.scroll-content {
+    background-color: #d1d1d1; 
+}
+
+.toggle-small input:checked + .track {
+    background: rgba(60, 150, 0, 0.5);
+}
+
+.toggle-small input:checked + .track .handle {
+    background: rgb(250, 250, 250);
+    border: 1px solid rgb(60, 150, 0);
+}
+
+.toggle-small  + .track .handle {
+    border: 1px solid rgb(60, 150, 0);
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;    
+}
+
+.strong {
+    font-weight: 800;
+}
+
+.green {
+    color: rgb(60, 150, 0);
+}

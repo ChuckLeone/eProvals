@@ -1,0 +1,64 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{order.name}}">
+    <ion-content class="padding">
+        <ion-list>
+            <ion-item class="item-remove-animate item-avatar">
+                <div class="left">
+                    <img ng-src="{{order.face}}" style="width: 64px; height: 64px">
+                </div>
+                <div>
+                    <h4>{{order.name}}</h4>
+                    <p>{{order.lastText}} </p>
+                    <span class="">{{order.phone}}</span>
+                </div>
+            </ion-item>
+        </ion-list>
+            <p>Status: <span class="green">{{order.status}}</span></p>
+
+            <ion-list>
+                <ion-item>
+                    <div>
+                        <span class="left">Microsoft Surce Pro 3</span>
+                        <span class="right">{{ 1500 | currency}}</span>
+                    </div>
+                </ion-item>
+                <ion-item>
+                    <div>
+                        <span class="left">Microsoft Surce Pro 3 - Dock</span>
+                        <span class="right">{{ 150 | currency}}</span>
+                    </div>
+                </ion-item>
+                <ion-item>
+                    <div>
+                        <span class="left">Microsoft Surce Pro 3 - Mouse</span>
+                        <span class="right">{{ 70 | currency}}</span>
+                    </div>
+                </ion-item>
+                <ion-item>
+                    <div>
+                        <span class="left">icrosoft Surce Pro 3 - AC Adaptor</span>
+                        <span class="right">{{ 50 | currency}}</span>
+                    </div>
+                </ion-item>
+                <ion-item class="item item-divider">
+                    <span class="strong left">Total</span>
+                    <span class="right">{{order.amount | currency}}</span>
+                </ion-item>
+            </ion-list>
+            <div class="right">
+                
+            </div>
+        <div data-ng-show="order.status == ''">
+            <button class="button button-full button-balanced icon ion-checkmark-circled" ng-click="orderApprove(orderId)"> Approve</button>
+            <button class="button button-full button-assertive icon ion-close-circled" ng-click="orderReject(orderId)"> Reject</button>
+        </div>
+        <div data-ng-show="order.status == 'approved'">
+            <h3>This order has been approved.</h3>
+        </div>
+</ion-content>
+</ion-view>
