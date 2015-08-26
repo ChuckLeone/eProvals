@@ -1,7 +1,10 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, Orders) {
-  $scope.orders = Orders.all();
+.controller('DashCtrl', function($scope, $filter, Orders) {
+   $scope.orders = Orders.all($scope.orders); 
+   $scope.pendingOrders = $scope.orders;
+   console.log("found " + $scope.orders);
+   $scope.pending = $filter('filter')($scope.orders, {status : 'approved'})[0];
 })
 
 .controller('OrdersCtrl', function($scope, Orders) {
@@ -16,11 +19,9 @@ angular.module('starter.controllers', [])
         console.log($scope.order);
     $scope.orderApprove = function(order) {
         $scope.order.status = 'approved';
-        console.log("order " + $scope.order.status);  
     }
     $scope.orderReject = function (order) {
         $scope.order.status = 'rejected';
-        console.log("order " + $scope.order.status);
     }
 })
 

@@ -4,24 +4,21 @@
       <div class="item item-divider">New Purchase Orders</div>
       <div class="item item-body">
         <div>
-          <b>{{orders}}</b> new purchase orders are ready for review.
+          <b ng-model="pending.status"></b> new purchase orders are ready for review.
         </div>
       </div>
     </div>
     <div class="list card">
       <div class="item item-divider">Recently Approved</div>
       <div>
-       
             <ion-list ng-controller="OrdersCtrl">
                 <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="order in orders" type="item-text-wrap" href="#/tab/order/{{order.id}}" data-ng-show="order.status == 'approved' ">
                     <img ng-src="{{order.face}}">
                     <h2>{{order.name}}</h2>
                     <p>{{order.lastText}} <span class="right strong">{{order.amount | currency}}</span></p>
                     <i class="icon ion-chevron-right icon-accessory"></i>
-
                 </ion-item>
             </ion-list>
-       
       </div>
     </div>
     <div class="list card">
