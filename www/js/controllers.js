@@ -3,7 +3,6 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope, $filter, Orders) {
    $scope.orders = Orders.all($scope.orders); 
    $scope.pendingOrders = $scope.orders;
-   console.log("found " + $scope.orders);
    $scope.pending = $filter('filter')($scope.orders, {status : 'approved'})[0];
 })
 
