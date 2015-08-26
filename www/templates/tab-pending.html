@@ -1,5 +1,9 @@
 <ion-view view-title="Pending Purchase Orders">
   <ion-content>
+     <div class="list card" data-ng-if="(orders | filter: { status: 'pending'}).length <= 0">
+      <p>There are no pending purhased orders.</p>
+    </div>
+    
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="order in orders" type="item-text-wrap" href="#/tab/order/{{order.id}}" 
         data-ng-hide="order.status == 'approved' || order.status == 'rejected'">
