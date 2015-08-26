@@ -53,7 +53,7 @@
             <div class="right">
                 
             </div>
-        <div data-ng-show="order.status == ''">
+        <div data-ng-show="order.status == 'pending'">
             <button class="button button-full button-balanced icon ion-checkmark-circled" ng-click="orderApprove(orderId)"> Approve</button>
             <button class="button button-full button-assertive icon ion-close-circled" ng-click="orderReject(orderId)"> Reject</button>
         </div>

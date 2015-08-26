@@ -1,18 +1,18 @@
 <ion-view view-title="Activity">
   <ion-content class="padding">
-    <div class="list card">
+    <div class="list card" data-ng-if="(orders | filter: { status: 'pending'}).length > 0">
       <div class="item item-divider">New Purchase Orders</div>
       <div class="item item-body">
         <div>
-          <b ng-model="pending.status"></b> new purchase orders are ready for review.
+          <b>{{ (orders| filter: { status: 'pending' }).length }} </b> new purchase orders are ready for review.
         </div>
       </div>
     </div>
-    <div class="list card">
+    <div class="list card" data-ng-if="(orders | filter: { status: 'approved'}).length > 0">
       <div class="item item-divider">Recently Approved</div>
       <div>
             <ion-list ng-controller="OrdersCtrl">
-                <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="order in orders" type="item-text-wrap" href="#/tab/order/{{order.id}}" data-ng-show="order.status == 'approved' ">
+                <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="order in orders | filter: { status: 'approved' }" type="item-text-wrap" href="#/tab/order/{{order.id}}">
                     <img ng-src="{{order.face}}">
                     <h2>{{order.name}}</h2>
                     <p>{{order.lastText}} <span class="right strong">{{order.amount | currency}}</span></p>
@@ -21,16 +21,15 @@
             </ion-list>
       </div>
     </div>
-    <div class="list card">
+    <div class="list card" data-ng-if="(orders | filter: { status: 'rejected'}).length > 0">
       <div class="item item-divider">Recently Rejected</div>
       <div>
           <ion-list ng-controller="OrdersCtrl">
-              <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="order in orders" type="item-text-wrap" href="#/tab/order/{{order.id}}" data-ng-show="order.status == 'rejected' ">
+              <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="order in orders  | filter: { status: 'rejected' }" type="item-text-wrap" href="#/tab/order/{{order.id}}">
                   <img ng-src="{{order.face}}">
                   <h2>{{order.name}}</h2>
                   <p>{{order.lastText}} <span class="right strong">{{order.amount | currency}}</span></p>
                   <i class="icon ion-chevron-right icon-accessory"></i>
-
               </ion-item>
           </ion-list>
       </div>

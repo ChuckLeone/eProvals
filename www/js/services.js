@@ -11,49 +11,49 @@ angular.module('starter.services', [])
     phone: '716-555-1212',
     face: 'img/john.png',
     amount: '1770',
-    status: ''
+    status: 'pending'
   }, {
     id: 1,
     name: 'Homer Simpson',
     lastText: 'Department of Energy',
     face: 'img/homer.jpg',
     amount: '4398.76',
-    status: '',
+    status: 'pending',
   },{
     id: 2,
     name: 'Alex Davidson',
     lastText: 'Water and Sewer',
     face: 'img/alex.jpg',
     amount: '33.88',
-    status: ''
+    status: 'pending'
   }, {
     id: 3,
     name: 'Steve Wozniak',
     lastText: 'Environmental Agency',
     face: 'img/steve.jpg',
     amount: '456.94',
-    status: ''
+    status: 'pending'
   }, {
     id: 4,
     name: 'Elon Musk',
     lastText: 'Highway Department',
     face: 'img/elon.png',
     amount: '3500.00',
-    status: ''
+    status: 'pending'
   }, {
       id: 5,
       name: 'John Carmack',
       lastText: 'Infrastructure Management',
       face: 'img/carmack.jpg',
       amount: '350,000.00',
-      status: 'approved'
+      status: 'pending'
   }, {
       id: 6,
       name: 'Jeff Bezos',
       lastText: 'Drone Delivery',
       face: 'img/jeff.png',
       amount: '600,000.00',
-      status: 'rejected'
+      status: 'pending'
   }];
 
   return {
